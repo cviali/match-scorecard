@@ -17,12 +17,12 @@ import {
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toPng } from "html-to-image";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } te from "@/components/theme-toggle";
 
 interface PageProps {
-    params: Promise<{
+    params: {
         courtId: string;
-    }>;
+    };
 }
 
 const formSchema = z.object({
@@ -34,8 +34,19 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+export function generateStaticParams() {
+    return [
+        { courtId: '1' },
+        { courtId: '2' },
+        { courtId: '3' },
+        { courtId: '4' },
+        { courtId: '5' },
+        { courtId: '6' },
+    ];
+}
+
 export default function InputScorePage({ params }: PageProps) {
-    const [courtId, setCourtId] = useState<string>("");
+    const { courtId } = params;
     const [showScorecard, setShowScorecard] = useState(false);
     const [scoreData, setScoreData] = useState<FormData | null>(null);
     const scorecardRef = useRef<HTMLDivElement>(null);
@@ -49,11 +60,6 @@ export default function InputScorePage({ params }: PageProps) {
             opponentScore: "",
         },
     });
-
-    // Unwrap params
-    useEffect(() => {
-        params.then((p) => setCourtId(p.courtId));
-    }, [params]);
 
     const onSubmit = (data: FormData) => {
         setScoreData(data);
