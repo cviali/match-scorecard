@@ -1,9 +1,9 @@
 import ClientPage from "./client-page";
 
 interface PageProps {
-    params: {
+    params: Promise<{
         courtId: string;
-    };
+    }>;
 }
 
 export function generateStaticParams() {
@@ -17,6 +17,7 @@ export function generateStaticParams() {
     ];
 }
 
-export default function InputScorePage({ params }: PageProps) {
-    return <ClientPage courtId={params.courtId} />;
+export default async function InputScorePage({ params }: PageProps) {
+    const { courtId } = await params;
+    return <ClientPage courtId={courtId} />;
 }

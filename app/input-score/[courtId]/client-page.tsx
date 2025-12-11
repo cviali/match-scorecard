@@ -307,7 +307,7 @@ export default function ClientPage({ courtId }: ClientPageProps) {
                                         render={({ field }) => (
                                             <FormItem>
                                                 <FormLabel className="text-base font-semibold">
-                                                    Opponent's Name
+                                                    Opponent&apos;s Name
                                                 </FormLabel>
                                                 <FormControl>
                                                     <Input
@@ -327,7 +327,7 @@ export default function ClientPage({ courtId }: ClientPageProps) {
                                         render={({ field }) => (
                                             <FormItem>
                                                 <FormLabel className="text-base font-semibold">
-                                                    Opponent's Score
+                                                    Opponent&apos;s Score
                                                 </FormLabel>
                                                 <FormControl>
                                                     <Input
