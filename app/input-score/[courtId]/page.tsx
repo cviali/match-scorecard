@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toPng } from "html-to-image";
-import { ThemeToggle } te from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface PageProps {
     params: {
