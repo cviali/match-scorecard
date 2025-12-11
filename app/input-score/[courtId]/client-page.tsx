@@ -121,7 +121,7 @@ export default function ClientPage({ courtId }: ClientPageProps) {
                                     <div className="flex justify-center mb-4">
                                         <div className="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-lg">
                                             <Image
-                                                src="/logo.png"
+                                                src="match-scorecard/logo.png"
                                                 alt="Logo"
                                                 width={80}
                                                 height={80}
@@ -240,7 +240,7 @@ export default function ClientPage({ courtId }: ClientPageProps) {
                                 <ThemeToggle />
                             </div>
                             <Image
-                                src="/logo.png"
+                                src="match-scorecard/logo.png"
                                 alt="Logo"
                                 width={120}
                                 height={120}
